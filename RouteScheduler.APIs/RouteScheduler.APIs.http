@@ -1,0 +1,6 @@
+@RouteScheduler.APIs_HostAddress = http://localhost:5280
+
+GET {{RouteScheduler.APIs_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

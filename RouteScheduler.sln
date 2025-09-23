@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{369CB01D-A1A7-72D2-AABC-3F0945D148A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A2C5C42B-6AE0-4E3E-A904-72D1459D1BED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{20B7030D-DBC9-48C4-B64D-03302035495C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{2ADE764A-B745-48E1-9BB4-E9BFF4D04E9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{20C9328D-7695-4A88-8BF4-8537D46A64EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteScheduler.APIs", "RouteScheduler.APIs\RouteScheduler.APIs.csproj", "{1405D490-5828-421A-B29E-8ABD6977E411}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteScheduler.APIs.Controllers", "RouteScheduler.APIs.Controllers\RouteScheduler.APIs.Controllers.csproj", "{925EEE5D-BC1F-48ED-8178-208A36B9D36F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteScheduler.Core.Application", "RouteScheduler.Core.Application\RouteScheduler.Core.Application.csproj", "{8E16DFCC-F61B-4007-AECA-F42914E04738}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteScheduler.Core.Application.Abstraction", "RouteScheduler.Core.Application.Abstraction\RouteScheduler.Core.Application.Abstraction.csproj", "{A399B99C-B2EE-4ECF-B38A-EA5DC5DBAE79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteScheduler.Core.Domain", "RouteScheduler.Core.Domain\RouteScheduler.Core.Domain.csproj", "{50E8D3AE-7C2D-435A-BB62-128D3CA4E778}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteScheduler.Infrastructure.Persistence", "RouteScheduler.Infrastructure.Persistence\RouteScheduler.Infrastructure.Persistence.csproj", "{BFC5C2CA-344E-4780-A34C-7E5B592B33CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteScheduler.Infrastructure", "RouteScheduler.Infrastructure\RouteScheduler.Infrastructure.csproj", "{D9DCF0A4-7647-465A-9A9E-EC0EC339C795}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteScheduler.Shared", "RouteScheduler.Shared\RouteScheduler.Shared.csproj", "{F46CF75E-43B2-47AF-8FC5-3E4CAF15A4CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1405D490-5828-421A-B29E-8ABD6977E411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1405D490-5828-421A-B29E-8ABD6977E411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1405D490-5828-421A-B29E-8ABD6977E411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1405D490-5828-421A-B29E-8ABD6977E411}.Release|Any CPU.Build.0 = Release|Any CPU
+		{925EEE5D-BC1F-48ED-8178-208A36B9D36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{925EEE5D-BC1F-48ED-8178-208A36B9D36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{925EEE5D-BC1F-48ED-8178-208A36B9D36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{925EEE5D-BC1F-48ED-8178-208A36B9D36F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E16DFCC-F61B-4007-AECA-F42914E04738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E16DFCC-F61B-4007-AECA-F42914E04738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E16DFCC-F61B-4007-AECA-F42914E04738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E16DFCC-F61B-4007-AECA-F42914E04738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A399B99C-B2EE-4ECF-B38A-EA5DC5DBAE79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A399B99C-B2EE-4ECF-B38A-EA5DC5DBAE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A399B99C-B2EE-4ECF-B38A-EA5DC5DBAE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A399B99C-B2EE-4ECF-B38A-EA5DC5DBAE79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E8D3AE-7C2D-435A-BB62-128D3CA4E778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E8D3AE-7C2D-435A-BB62-128D3CA4E778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E8D3AE-7C2D-435A-BB62-128D3CA4E778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E8D3AE-7C2D-435A-BB62-128D3CA4E778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC5C2CA-344E-4780-A34C-7E5B592B33CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC5C2CA-344E-4780-A34C-7E5B592B33CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC5C2CA-344E-4780-A34C-7E5B592B33CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC5C2CA-344E-4780-A34C-7E5B592B33CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9DCF0A4-7647-465A-9A9E-EC0EC339C795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9DCF0A4-7647-465A-9A9E-EC0EC339C795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9DCF0A4-7647-465A-9A9E-EC0EC339C795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9DCF0A4-7647-465A-9A9E-EC0EC339C795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F46CF75E-43B2-47AF-8FC5-3E4CAF15A4CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F46CF75E-43B2-47AF-8FC5-3E4CAF15A4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F46CF75E-43B2-47AF-8FC5-3E4CAF15A4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F46CF75E-43B2-47AF-8FC5-3E4CAF15A4CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A2C5C42B-6AE0-4E3E-A904-72D1459D1BED} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{20B7030D-DBC9-48C4-B64D-03302035495C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{2ADE764A-B745-48E1-9BB4-E9BFF4D04E9A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{20C9328D-7695-4A88-8BF4-8537D46A64EB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1405D490-5828-421A-B29E-8ABD6977E411} = {2ADE764A-B745-48E1-9BB4-E9BFF4D04E9A}
+		{925EEE5D-BC1F-48ED-8178-208A36B9D36F} = {2ADE764A-B745-48E1-9BB4-E9BFF4D04E9A}
+		{8E16DFCC-F61B-4007-AECA-F42914E04738} = {20B7030D-DBC9-48C4-B64D-03302035495C}
+		{A399B99C-B2EE-4ECF-B38A-EA5DC5DBAE79} = {20B7030D-DBC9-48C4-B64D-03302035495C}
+		{50E8D3AE-7C2D-435A-BB62-128D3CA4E778} = {20B7030D-DBC9-48C4-B64D-03302035495C}
+		{BFC5C2CA-344E-4780-A34C-7E5B592B33CE} = {A2C5C42B-6AE0-4E3E-A904-72D1459D1BED}
+		{D9DCF0A4-7647-465A-9A9E-EC0EC339C795} = {A2C5C42B-6AE0-4E3E-A904-72D1459D1BED}
+		{F46CF75E-43B2-47AF-8FC5-3E4CAF15A4CF} = {20C9328D-7695-4A88-8BF4-8537D46A64EB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C6374A6-D7BD-4E38-920E-4A6C38D48480}
+	EndGlobalSection
+EndGlobal
