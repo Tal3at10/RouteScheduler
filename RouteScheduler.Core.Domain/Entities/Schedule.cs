@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace RouteScheduler.Core.Domain.Entities
 {
-    public class Schedule
+    public class Schedule : BaseAuditableEntity<int>    
     {
-        public int Id { get; set; }
         public int DriverId { get; set; }
         public int RouteId { get; set; }
         public DateTime Date { get; set; }

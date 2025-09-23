@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace RouteScheduler.Core.Domain.Entities
 {
-    public class Route
+    public class Route : BaseAuditableEntity<int>
     {
-        public int Id { get; set; }
         public required string Origin { get; set; } 
         public required string Destination { get; set; } 
         public double Distance { get; set; }
