@@ -13,7 +13,6 @@ The solution supports both MongoDB and relational SQL databases (SQLite/Postgres
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
