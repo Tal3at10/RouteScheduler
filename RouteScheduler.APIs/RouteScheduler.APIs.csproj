@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -12,10 +12,16 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RouteScheduler.Core.Application\RouteScheduler.Core.Application.csproj" />
+    <ProjectReference Include="..\RouteScheduler.Core.Application.Abstraction\RouteScheduler.Core.Application.Abstraction.csproj" />
+    <ProjectReference Include="..\RouteScheduler.Core.Domain\RouteScheduler.Core.Domain.csproj" />
     <ProjectReference Include="..\RouteScheduler.Infrastructure.Persistence\RouteScheduler.Infrastructure.Persistence.csproj" />
+    <ProjectReference Include="..\RouteScheduler.APIs.Controllers\RouteScheduler.APIs.Controllers.csproj" />
   </ItemGroup>
 
 </Project>

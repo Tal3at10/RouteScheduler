@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RouteScheduler.Core.Application.Abstraction\RouteScheduler.Core.Application.Abstraction.csproj" />
+    <ProjectReference Include="..\RouteScheduler.Core.Domain\RouteScheduler.Core.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

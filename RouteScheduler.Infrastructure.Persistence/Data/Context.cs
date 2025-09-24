@@ -21,6 +21,27 @@ namespace RouteScheduler.Infrastructure.Persistence.Data
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AssemblyInformations).Assembly); // using the AssemblyInformations class to get the assembly
         }
+
+        public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess,CancellationToken cancellationToken = default)
+        {
+            foreach (var entry in ChangeTracker.Entries<BaseAuditableEntity<int>>()
+                         .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified))
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Entity.CreatedBy = "System"; 
+                    entry.Entity.CreatedAt = DateTime.UtcNow;
+                }
+                else if (entry.State == EntityState.Modified)
+                {
+                    entry.Entity.UpdatedBy = "System"; 
+                    entry.Entity.UpdatedAt = DateTime.UtcNow;
+                }
+            }
+
+            return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+        }
+
         public DbSet<Driver> Drivers { get; set; } = null!;
         public DbSet<Route> Routes { get; set; } = null!;
         public DbSet<Schedule> Schedules { get; set; } = null!;

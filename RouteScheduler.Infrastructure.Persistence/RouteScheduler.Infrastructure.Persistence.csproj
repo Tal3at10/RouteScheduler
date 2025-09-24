@@ -13,10 +13,15 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.20" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+    <PackageReference Include="MongoDB.Driver" Version="2.25.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RouteScheduler.Core.Application.Abstraction\RouteScheduler.Core.Application.Abstraction.csproj" />
     <ProjectReference Include="..\RouteScheduler.Core.Domain\RouteScheduler.Core.Domain.csproj" />
+    <ProjectReference Include="..\RouteScheduler.Core.Application\RouteScheduler.Core.Application.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
-
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection.Extensions;
+using RouteScheduler.APIs.Middleware;
+using RouteScheduler.Core.Application;
+using RouteScheduler.Core.Application.Mapping;
+using RouteScheduler.APIs.Extensions;
 using RouteScheduler.Infrastructure.Persistence;
-using RouteScheduler.Infrastructure.Persistence.Data;
 
 namespace RouteScheduler.APIs
 {
@@ -12,37 +12,71 @@ namespace RouteScheduler.APIs
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            #region Configure Services
 
-            #region Configue Services
+            builder.Services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+                });
 
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            // Swagger
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new()
+                {
+                    Title = "Route Scheduler API",
+                    Version = "v1",
+                    Description = "A comprehensive API for managing drivers, routes, and schedules"
+                });
+            });
 
+            // Application Services
+            builder.Services.AddApplicationServices();
+
+            // AutoMapper
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+            // CORS
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", policy =>
+                {
+                    policy.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                });
+            });
+
+            // Persistence Services (EF Core / MongoDB)
             builder.Services.AddPersistenceServices(builder.Configuration);
 
-
-
             #endregion
 
-            #region Build
             var app = builder.Build();
 
-            #endregion
+            #region Configure Middleware
 
-            #region Kestral Middlewares
+            // Swagger middleware for all environments (can restrict to Development if needed)
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Route Scheduler API v1");
+                c.RoutePrefix = "swagger"; // Swagger UI available at /swagger/index.html
+            });
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
+
+            app.UseMiddleware<GlobalExceptionMiddleware>();
 
             app.UseAuthorization();
-
-
             app.MapControllers();
 
-            app.Run(); 
             #endregion
+
+            app.Run();
         }
     }
 }
