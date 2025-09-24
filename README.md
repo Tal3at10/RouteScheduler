@@ -1,5 +1,3 @@
-تمام ✅، خلي ملف الـ **README.md** يظهر بشكل مرتب وأنيق من غير تكرار العنوان، أهو الشكل المظبوط:
-
 # RouteScheduler
 
 Robust, production-ready route scheduling and management system built with .NET 8.  
