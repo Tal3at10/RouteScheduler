@@ -1,7 +1,6 @@
 using RouteScheduler.APIs.Middleware;
 using RouteScheduler.Core.Application;
 using RouteScheduler.Core.Application.Mapping;
-using RouteScheduler.APIs.Extensions;
 using RouteScheduler.Infrastructure.Persistence;
 
 namespace RouteScheduler.APIs
@@ -12,15 +11,12 @@ namespace RouteScheduler.APIs
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            #region Configure Services
-
             builder.Services.AddControllers()
                 .AddJsonOptions(options =>
                 {
                     options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
                 });
 
-            // Swagger
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
@@ -32,13 +28,10 @@ namespace RouteScheduler.APIs
                 });
             });
 
-            // Application Services
             builder.Services.AddApplicationServices();
 
-            // AutoMapper
             builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-            // CORS
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll", policy =>
@@ -49,21 +42,15 @@ namespace RouteScheduler.APIs
                 });
             });
 
-            // Persistence Services (EF Core / MongoDB)
             builder.Services.AddPersistenceServices(builder.Configuration);
-
-            #endregion
 
             var app = builder.Build();
 
-            #region Configure Middleware
-
-            // Swagger middleware for all environments (can restrict to Development if needed)
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Route Scheduler API v1");
-                c.RoutePrefix = "swagger"; // Swagger UI available at /swagger/index.html
+                c.RoutePrefix = "swagger";
             });
 
             app.UseHttpsRedirection();
@@ -73,8 +60,6 @@ namespace RouteScheduler.APIs
 
             app.UseAuthorization();
             app.MapControllers();
-
-            #endregion
 
             app.Run();
         }

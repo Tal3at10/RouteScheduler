@@ -31,7 +31,6 @@ namespace RouteScheduler.Core.Application.Services.Schedules
 
         public async Task<ScheduleToReturnDto> CreateAsync(ScheduleToCreateDto scheduleToCreate)
         {
-            // Check if driver is available
             var isAvailable = await _unitOfWork.Schedules.ExistsAsync(s => 
                 s.DriverId == scheduleToCreate.DriverId && 
                 s.Date.Date == scheduleToCreate.Date.Date && 

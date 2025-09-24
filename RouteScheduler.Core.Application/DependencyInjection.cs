@@ -10,7 +10,6 @@ namespace RouteScheduler.Core.Application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            // Register Services
             services.AddScoped<IDriverService, DriverService>();
             services.AddScoped<IRouteService, RouteService>();
             services.AddScoped<IScheduleService, ScheduleService>();
